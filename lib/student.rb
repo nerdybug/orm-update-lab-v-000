@@ -34,7 +34,6 @@ class Student
     student.id = array[0]
     student.name = array[1]
     student.grade = array[2]
-    student.save
   end
   # def update
   #   update_sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?;"
