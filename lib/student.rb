@@ -29,6 +29,13 @@ class Student
     DB[:conn].execute(drop_sql)
   end
 
+  def self.new_from_db(array)
+    student = self.new
+    student.id = array[0]
+    student.name = array[1]
+    student.grade = array[2]
+    student.save
+  end
   # def update
   #   update_sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?;"
   #   DB[:conn].execute(update_sql, self.name, self.grade, self.id)
