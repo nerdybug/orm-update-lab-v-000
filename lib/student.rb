@@ -61,5 +61,5 @@ class Student
   def self.new_from_db(array)
     student = self.new(array[0], array[1], array[2])
   end
-  
+
 end
