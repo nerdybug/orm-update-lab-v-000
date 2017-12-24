@@ -56,4 +56,9 @@ class Student
     self.new(found[0], found[1], found[2])
   end
 
+  def self.create(name, grade)
+    student = self.new(name, grade)
+    student.save
+    student
+  end
 end
