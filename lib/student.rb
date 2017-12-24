@@ -47,7 +47,7 @@ class Student
     DB[:conn].execute(name_sql, name).collect do |row|
       self.new_from_db(row)
     end
-    
+
   end
-  
+
 end
