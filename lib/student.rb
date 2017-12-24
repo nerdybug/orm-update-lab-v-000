@@ -45,7 +45,7 @@ class Student
     @id = DB[:conn].execute("SELECT last_insert_rowid() FROM students")[0][0]
   end
 
-  def self.find_by_name(name)
+  def find_by_name(name)
     name_sql = "SELECT * FROM students WHERE name = ?;"
     DB[:conn].execute(name_sql, name).collect do |row|
       self.new_from_db(row)
