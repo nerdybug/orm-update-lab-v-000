@@ -31,9 +31,6 @@ class Student
 
   def self.new_from_db(array)
     student = self.new(array[1], array[2], array[0])
-    # student.id = array[0]
-    # student.name = array[1]
-    # student.grade = array[2]
   end
   # def update
   #   update_sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?;"
