@@ -29,6 +29,10 @@ class Student
     DB[:conn].execute(drop_sql)
   end
 
+  def update
+    update_sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?;"
+  end
+
   def save
     save_sql = <<-SQL
     INSERT INTO students (name, grade) VALUES (?, ?);
