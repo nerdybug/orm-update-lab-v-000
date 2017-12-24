@@ -21,5 +21,5 @@ class Student
     SQL
     DB[:conn].execute(table_sql)
   end
-  
+
 end
