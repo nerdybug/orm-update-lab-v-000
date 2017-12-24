@@ -32,10 +32,11 @@ class Student
   def self.new_from_db(array)
     student = self.new(array[0], array[1], array[2])
   end
-  # def update
-  #   update_sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?;"
-  #   DB[:conn].execute(update_sql, self.name, self.grade, self.id)
-  # end
+  
+  def update
+    update_sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?"
+    DB[:conn].execute(update_sql, self.name, self.grade, self.id)
+  end
 
   def save
     save_sql = <<-SQL
