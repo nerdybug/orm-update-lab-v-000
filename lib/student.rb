@@ -11,28 +11,6 @@ class Student
     @grade = grade
   end
 
-  def self.create_table
-    table_sql = <<-SQL
-    CREATE TABLE students (
-      id INTEGER PRIMARY KEY,
-      name TEXT,
-      grade INTEGER
-    );
-    SQL
-    DB[:conn].execute(table_sql)
-  end
-
-  def self.drop_table
-    drop_sql = <<-SQL
-    DROP TABLE students;
-    SQL
-    DB[:conn].execute(drop_sql)
-  end
-
-  def self.new_from_db(array)
-    student = self.new(array[0], array[1], array[2])
-  end
-
   def update
     update_sql = "UPDATE students SET name = ?, grade = ? WHERE id = ?"
     DB[:conn].execute(update_sql, self.name, self.grade, self.id)
@@ -61,4 +39,27 @@ class Student
     student.save
     student
   end
+
+  def self.create_table
+    table_sql = <<-SQL
+    CREATE TABLE students (
+      id INTEGER PRIMARY KEY,
+      name TEXT,
+      grade INTEGER
+    );
+    SQL
+    DB[:conn].execute(table_sql)
+  end
+
+  def self.drop_table
+    drop_sql = <<-SQL
+    DROP TABLE students;
+    SQL
+    DB[:conn].execute(drop_sql)
+  end
+
+  def self.new_from_db(array)
+    student = self.new(array[0], array[1], array[2])
+  end
+  
 end
